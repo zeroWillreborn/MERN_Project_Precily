@@ -1,0 +1,31 @@
+{
+	"name": "expressauthjwt",
+	"version": "1.0.0",
+	"description": "",
+	"main": "app.js",
+	"scripts": {
+		"start": "node app",
+		"dev": "nodemon app",
+		"docker-build-client": "NPM_CONFIG_PRODUCTION=false cd client && npm install && npm build",
+		"docker-start-server": "npm start",
+		"docker-build-webapp": "concurrently \"npm docker-build-client\" \"npm start\" "
+
+	},
+  "engines": {
+    "node":"16.16.0"
+  },
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"type": "module",
+	"dependencies": {
+		"cors": "^2.8.5",
+		"dotenv": "^16.0.0",
+		"express": "^5.0.0-beta.1",
+		"jsonwebtoken": "^8.5.1",
+		"mongoose": "^6.2.3"
+	},
+	"devDependencies": {
+		"nodemon": "^2.0.15"
+	}
+}
